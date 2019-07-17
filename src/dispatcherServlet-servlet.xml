@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                                      http://www.springframework.org/schema/context
+                                      http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 注意上面的也可以写成spring-context-4.3.xsd，如果不写则默认是用当前的版本 -->
+    <!--xmlns:tx="http://www.springframework.org/schema/tx"-->
+
+    <!-- 注意这里的base-package的值就是HelloWorldController.java所在的包名 -->
+    <context:component-scan base-package="com.feng.controller" />
+
+    <!-- 注意prefix前后的/不要漏了，WebRoot类似是根目录 -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--<property name="prefix" value="/WEB-INF/jsp/" />-->
+        <!--<property name="suffix" value=".jsp" />-->
+    </bean>
+
+</beans>
